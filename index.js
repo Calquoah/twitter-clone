@@ -280,6 +280,205 @@ Challenge:
 /* Font Awesome CDN Challenge - Adding Icons */
 
 
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+// /*
+// Challenge:
+// 1. Inside each span that has a class of "tweet-detail",
+//    add an <i> tag.
+// 2. Give each <i> tag the classes it needs to render the
+//    correct icons next to the numbers.
+//    The classes you will need are:
+//     fa-regular, 
+//     fa-solid, 
+//     fa-comment-dots, 
+//     fa-heart, 
+//     fa-retweet
+// */
+    
+//     tweetsData.forEach(function(tweet){
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comments-dots"></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart"></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet"></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+/* Add Data Attributes to each of the <i></i> tags */
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+// /*
+// Challenge:
+// 1. Add data attributes to each of the  <i> tags. You can call
+//    them 'reply', 'like', and 'retweet’.
+// 2. Each data attribute should hold the tweet's uuid.
+// */
+    
+//     tweetsData.forEach(function(tweet){
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots" 
+//                     data-reply="${tweet.uuid}></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart"
+//                     data-like="${tweet.uuid}></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet"
+//                     data-retweet="${tweet.uuid}></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+
+/* Add eventListener for when an icon is clicked */
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     if (e.target.dataset.like){
+//         console.log(e.target.dataset.like)
+//     }
+// /*
+// Challenge:
+// 1. When a like icon is clicked, this function 
+//    should log out the contents of the 'data-like' 
+//    data-attribute.
+
+// ⚠️ Clicking on the page but not on the like icon
+//    will log out 'undefined'. That is absolutely fine.
+// */
+// })
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+/* Begin to create a function to handle clicks on the "like" button */
+
 import { tweetsData } from './data.js'
 const tweetInput = document.getElementById('tweet-input')
 const tweetBtn = document.getElementById('tweet-btn')
@@ -288,21 +487,31 @@ tweetBtn.addEventListener('click', function(){
     console.log(tweetInput.value)
 })
 
-function getFeedHtml(){
-    let feedHtml = ``
+document.addEventListener('click', function(e){
+    // console.log('like', e.target.dataset.like)
+    if(e.target.dataset.like) {
+        handleLikeClick(e.target.dataset.like).tweet.uuid
+    }
 /*
 Challenge:
-1. Inside each span that has a class of "tweet-detail",
-   add an <i> tag.
-2. Give each <i> tag the classes it needs to render the
-   correct icons next to the numbers.
-   The classes you will need are:
-    fa-regular, 
-    fa-solid, 
-    fa-comment-dots, 
-    fa-heart, 
-    fa-retweet
+1. If a like icon has been clicked, call handleLikeClick
+   passing in the uuid that is stored in the like icon's 
+   data attribute. 
 */
+})
+
+function handleLikeClick(tweetId){
+    console.log(tweetId)
+/*
+Challenge:
+2. handleLikeClick should take in a parameter. 
+   You can call this parameter 'tweetId'. For 
+   now just log out tweetId.
+*/
+}
+
+function getFeedHtml(){
+    let feedHtml = ``
     
     tweetsData.forEach(function(tweet){
         feedHtml += `
@@ -314,15 +523,21 @@ Challenge:
             <p class="tweet-text">${tweet.tweetText}</p>
             <div class="tweet-details">
                 <span class="tweet-detail">
-                    <i class="fa-regular fa-comments-dots"></i>
+                    <i class="fa-regular fa-comment-dots"
+                    data-reply="${tweet.uuid}"
+                    ></i>
                     ${tweet.replies.length}
                 </span>
                 <span class="tweet-detail">
-                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-heart"
+                    data-like="${tweet.uuid}"
+                    ></i>
                     ${tweet.likes}
                 </span>
                 <span class="tweet-detail">
-                    <i class="fa-solid fa-retweet"></i>
+                    <i class="fa-solid fa-retweet"
+                    data-retweet="${tweet.uuid}"
+                    ></i>
                     ${tweet.retweets}
                 </span>
             </div>   
