@@ -169,7 +169,12 @@ Challenge:
 */
 
 
+
+
 /* forEach() Challenge */
+
+
+
 
 // import { tweetsData } from './data.js'
 // const tweetInput = document.getElementById('tweet-input')
@@ -342,7 +347,13 @@ Challenge:
 
 
 
+
+
 /* Add Data Attributes to each of the <i></i> tags */
+
+
+
+
 
 // import { tweetsData } from './data.js'
 // const tweetInput = document.getElementById('tweet-input')
@@ -405,6 +416,11 @@ Challenge:
 
 
 /* Add eventListener for when an icon is clicked */
+
+
+
+
+
 
 // import { tweetsData } from './data.js'
 // const tweetInput = document.getElementById('tweet-input')
@@ -479,6 +495,999 @@ Challenge:
 
 /* Begin to create a function to handle clicks on the "like" button */
 
+
+
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     // console.log('like', e.target.dataset.like)
+//     if(e.target.dataset.like) {
+//         handleLikeClick(e.target.dataset.like).tweet.uuid
+//     }
+// /*
+// Challenge:
+// 1. If a like icon has been clicked, call handleLikeClick
+//    passing in the uuid that is stored in the like icon's 
+//    data attribute. 
+// */
+// })
+
+// function handleLikeClick(tweetId){
+//     console.log(tweetId)
+// /*
+// Challenge:
+// 2. handleLikeClick should take in a parameter. 
+//    You can call this parameter 'tweetId'. For 
+//    now just log out tweetId.
+// */
+// }
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+
+/* Find the Tweet Object Challenge */
+
+
+
+
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     if(e.target.dataset.like){
+//        handleLikeClick(e.target.dataset.like) 
+//     }
+// })
+
+// function handleLikeClick(tweetId){
+//     console.log(tweetId)
+// /*
+// Challenge:
+// 1. Iterate over tweetsData and use the uuid 
+//    saved in tweetId to identify the liked
+//    tweet's object. Save that object to a 
+//    new const called 'targetTweetObj'.
+// ⚠️ targetTweetObj should hold an object, NOT
+//    an array.
+// 2. Increment targetTweetObj's 'likes' count 
+//    by 1.
+// 3. Log out targetTweetObj
+// */
+
+// }
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     if(e.target.dataset.like){
+//        handleLikeClick(e.target.dataset.like) 
+//     }
+// })
+
+// function handleLikeClick(tweetId){
+//     // console.log(tweetId)
+
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0] // Instead of creating a new const
+//     // you can just add the index here so the 
+//     // filter method will look for items at 
+//     // position 0 in the array.
+    
+//     // const realTargetTweetObject = targetTweetObj[0]
+
+//     targetTweetObj.likes++
+//     render()
+//     // console.log(targetTweetObj)
+// /*
+// Challenge:
+// 1. Iterate over tweetsData and use the uuid 
+//    saved in tweetId to identify the liked
+//    tweet's object. Save that object to a 
+//    new const called 'targetTweetObj'.
+// ⚠️ targetTweetObj should hold an object, NOT
+//    an array.
+// 2. Increment targetTweetObj's 'likes' count 
+//    by 1.
+// 3. Log out targetTweetObj
+// */
+
+// }
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+
+
+/* Challenge: Increment and Decrement the Like button */
+
+
+
+
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     if(e.target.dataset.like){
+//        handleLikeClick(e.target.dataset.like) 
+//     }
+// })
+
+// function handleLikeClick(tweetId){ 
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+    
+// /*
+// Challenge:
+// 1. When a tweet is liked, it's 'isLiked' property
+//    should be set to true.
+// 2. When a tweet is unliked, it's 'isLiked' property
+//    should be set to false and its 'likes' count
+//    should be decremented.
+// */   
+
+    
+// if (targetTweetObj.isLiked) {
+//     targetTweetObj.likes--
+//     targetTweetObj.isLiked = false
+// }
+// else {
+//     targetTweetObj.likes++
+//     targetTweetObj.isLiked = true
+// }
+    
+    
+//     render()
+// }
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+/* Challenge: Flip the Boolean */
+
+
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     if(e.target.dataset.like){
+//        handleLikeClick(e.target.dataset.like) 
+//     }
+// })
+
+// function handleLikeClick(tweetId){ 
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+    
+// /*
+// Challenge:
+// 1. Delete the two lines of code marked below and
+//    replace them with just one line of code outside 
+//    of the if else.
+//    Hint: Google the logical NOT operator (!)
+// */ 
+
+//     if (targetTweetObj.isLiked){
+//         targetTweetObj.likes--
+//         // targetTweetObj.isLiked = false // delete
+//     }
+//     else{
+//         targetTweetObj.likes++
+//         // targetTweetObj.isLiked = true // delete  
+//     }
+    
+//     targetTweetObj.isLiked = !targetTweetObj.isLiked
+    
+    
+//     /* const a = 3;
+// const b = -2;
+
+// console.log(!(a > 0 || b > 0));
+// // Expected output: false */
+    
+//     render()
+// }
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+
+/* Challenge: Retweet a Tweet */
+
+
+
+
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     if(e.target.dataset.like){
+//        handleLikeClick(e.target.dataset.like) 
+//     }
+
+//     /*
+// Challenge:
+// 1. Make this eventListener call "handleRetweetClick" 
+//    when the retweet icon is clicked, passing in the
+//    uuid from that tweet.  
+// */
+
+//     else if(e.target.dataset.retweet){
+//         handleRetweetClick(e.target.dataset.retweet)
+//     }
+// })
+
+// function handleLikeClick(tweetId){ 
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+
+//     if (targetTweetObj.isLiked){
+//         targetTweetObj.likes--
+//     }
+//     else{
+//         targetTweetObj.likes++ 
+//     }
+//     targetTweetObj.isLiked = !targetTweetObj.isLiked
+//     render()
+// }
+
+// function handleRetweetClick(tweetId){
+// /*
+// Challenge:
+// 2. Find the retweeted tweet's object in tweetsData 
+//    and save it to a const.
+// 3. Increment or decrement the retweet count of the 
+//    tweet and flip its isRetweeted boolean.
+// 4. Call the render function.  
+// */
+
+//     const targetRetweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+
+//     if (targetRetweetObj.isRetweeted){
+//         targetRetweetObj.retweets--
+//     }
+//     else {
+//         targetRetweetObj.retweets++
+//     }
+//     targetRetweetObj.isRetweeted = !targetRetweetObj.isRetweeted
+//     render()
+// }
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+
+
+/* Challenge: Color the Icons */
+
+
+
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     if(e.target.dataset.like){
+//        handleLikeClick(e.target.dataset.like) 
+//     }
+//     else if(e.target.dataset.retweet){
+//         handleRetweetClick(e.target.dataset.retweet)
+//     }
+// })
+
+// function handleLikeClick(tweetId){ 
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+
+//     if (targetTweetObj.isLiked){
+//         targetTweetObj.likes--
+//     }
+//     else{
+//         targetTweetObj.likes++ 
+//     }
+//     targetTweetObj.isLiked = !targetTweetObj.isLiked
+//     render()
+// }
+
+// function handleRetweetClick(tweetId){
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+    
+//     if(targetTweetObj.isRetweeted){
+//         targetTweetObj.retweets--
+//     }
+//     else{
+//         targetTweetObj.retweets++
+//     }
+//     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+//     render() 
+// }
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+
+//         let likeIconClass = ''
+//         let retweetIconClass = ''
+
+//         if(tweet.isLiked){
+//             likeIconClass = 'liked'
+//         }
+//         else if(tweet.isRetweeted){
+//             retweetIconClass = 'retweeted'
+//         }
+// /*
+// Challenge:
+// 1. Use an if statement to set the value of 
+//    'likeIconClass' to the string 'liked' 
+//    if the tweet has been liked. 
+// 2. In the like icon tag, add 'likeIconClass' 
+//    to the list of classes.
+// */            
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart ${likeIconClass}"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet ${retweetIconClass}"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+
+/* Challenge: Check it a tweet has Replies */
+
+
+
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     if(e.target.dataset.like){
+//        handleLikeClick(e.target.dataset.like) 
+//     }
+//     else if(e.target.dataset.retweet){
+//         handleRetweetClick(e.target.dataset.retweet)
+//     }
+// })
+
+// function handleLikeClick(tweetId){ 
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+
+//     if (targetTweetObj.isLiked){
+//         targetTweetObj.likes--
+//     }
+//     else{
+//         targetTweetObj.likes++ 
+//     }
+//     targetTweetObj.isLiked = !targetTweetObj.isLiked
+//     render()
+// }
+
+// function handleRetweetClick(tweetId){
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+    
+//     if(targetTweetObj.isRetweeted){
+//         targetTweetObj.retweets--
+//     }
+//     else{
+//         targetTweetObj.retweets++
+//     }
+//     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+//     render() 
+// }
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+        
+//         let likeIconClass = ''
+        
+//         if (tweet.isLiked){
+//             likeIconClass = 'liked'
+//         }
+        
+//         let retweetIconClass = ''
+        
+//         if (tweet.isRetweeted){
+//             retweetIconClass = 'retweeted'
+//         }
+        
+// /*
+// Challenge:
+// 1. Use an if statement to check if a tweet has replies.
+// 2. If it does, log out the uuid for that tweet.
+// */
+
+//         if (tweet.replies.length > 0) {
+//             console.log(tweet.uuid)
+//         }
+          
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart ${likeIconClass}"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet ${retweetIconClass}"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+// </div>
+// `
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+
+
+// /* Challenge: HTML string for replies and add to parent div */
+
+
+
+
+// import { tweetsData } from './data.js'
+// const tweetInput = document.getElementById('tweet-input')
+// const tweetBtn = document.getElementById('tweet-btn')
+
+// tweetBtn.addEventListener('click', function(){
+//     console.log(tweetInput.value)
+// })
+
+// document.addEventListener('click', function(e){
+//     if(e.target.dataset.like){
+//        handleLikeClick(e.target.dataset.like) 
+//     }
+//     else if(e.target.dataset.retweet){
+//         handleRetweetClick(e.target.dataset.retweet)
+//     }
+// })
+
+// function handleLikeClick(tweetId){ 
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+
+//     if (targetTweetObj.isLiked){
+//         targetTweetObj.likes--
+//     }
+//     else{
+//         targetTweetObj.likes++ 
+//     }
+//     targetTweetObj.isLiked = !targetTweetObj.isLiked
+//     render()
+// }
+
+// function handleRetweetClick(tweetId){
+//     const targetTweetObj = tweetsData.filter(function(tweet){
+//         return tweet.uuid === tweetId
+//     })[0]
+    
+//     if(targetTweetObj.isRetweeted){
+//         targetTweetObj.retweets--
+//     }
+//     else{
+//         targetTweetObj.retweets++
+//     }
+//     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+//     render() 
+// }
+
+// function getFeedHtml(){
+//     let feedHtml = ``
+    
+//     tweetsData.forEach(function(tweet){
+        
+//         let likeIconClass = ''
+        
+//         if (tweet.isLiked){
+//             likeIconClass = 'liked'
+//         }
+        
+//         let retweetIconClass = ''
+        
+//         if (tweet.isRetweeted){
+//             retweetIconClass = 'retweeted'
+//         }
+
+//         let repliesHtml = ''
+        
+//         if(tweet.replies.length > 0){
+//             let repliesHtml = ''
+        
+//         if(tweet.replies.length > 0){
+//             tweet.replies.forEach(function(reply){
+//                    repliesHtml += `
+//         <div class="tweet-reply">
+//             <div class="tweet-inner">
+//                     <img src=${reply.profilePic} class="profile-pic">
+//                 <div>
+//                     <p class="handle">${reply.handle}</p>
+//                     <p class="tweet-text">${reply.tweetText}</p>
+//                 </div>
+//             </div>
+//         </div>`
+//             })
+            
+            
+//             // console.log(tweet.uuid)
+// /*
+// Challenge:
+// 1. If a tweet has replies, iterate through the replies
+//    and wrap each one in the HTML template provided below. 
+//    Make sure to replace words in UPPERCASE with data from 
+//    the tweet. On each iteration, add this HTML to repliesHtml.
+   
+// <div class="tweet-reply">
+//     <div class="tweet-inner">
+//         <img src="PROFILE PIC" class="profile-pic">
+//             <div>
+//                 <p class="handle">HANDLE</p>
+//                 <p class="tweet-text">TWEET TEXT</p>
+//             </div>
+//         </div>
+// </div>
+// */
+//         }
+        
+          
+//         feedHtml += `
+// <div class="tweet">
+//     <div class="tweet-inner">
+//         <img src="${tweet.profilePic}" class="profile-pic">
+//         <div>
+//             <p class="handle">${tweet.handle}</p>
+//             <p class="tweet-text">${tweet.tweetText}</p>
+//             <div class="tweet-details">
+//                 <span class="tweet-detail">
+//                     <i class="fa-regular fa-comment-dots"
+//                     data-reply="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.replies.length}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-heart ${likeIconClass}"
+//                     data-like="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.likes}
+//                 </span>
+//                 <span class="tweet-detail">
+//                     <i class="fa-solid fa-retweet ${retweetIconClass}"
+//                     data-retweet="${tweet.uuid}"
+//                     ></i>
+//                     ${tweet.retweets}
+//                 </span>
+//             </div>   
+//         </div>            
+//     </div>
+//     <div class="hidden" id="replies-${tweet.uuid}">
+//       ${repliesHtml}  
+//     </div>
+// </div>
+// `
+// /*
+// Challenge:
+// 2. Place repliesHtml in its parent div remembering 
+//    to update that divs id.
+// */
+
+
+//    })
+//    return feedHtml 
+// }
+
+// function render(){
+//     document.getElementById('feed').innerHTML = getFeedHtml()
+// }
+
+// render()
+
+
+
+
+
+
+/* Challenge: Toggle Hidden on Replies */
+
+
+
+
+
 import { tweetsData } from './data.js'
 const tweetInput = document.getElementById('tweet-input')
 const tweetBtn = document.getElementById('tweet-btn')
@@ -488,32 +1497,93 @@ tweetBtn.addEventListener('click', function(){
 })
 
 document.addEventListener('click', function(e){
-    // console.log('like', e.target.dataset.like)
-    if(e.target.dataset.like) {
-        handleLikeClick(e.target.dataset.like).tweet.uuid
+    if(e.target.dataset.like){
+       handleLikeClick(e.target.dataset.like) 
     }
-/*
-Challenge:
-1. If a like icon has been clicked, call handleLikeClick
-   passing in the uuid that is stored in the like icon's 
-   data attribute. 
-*/
+    else if(e.target.dataset.retweet){
+        handleRetweetClick(e.target.dataset.retweet)
+    }
 })
+ 
+function handleLikeClick(tweetId){ 
+    const targetTweetObj = tweetsData.filter(function(tweet){
+        return tweet.uuid === tweetId
+    })[0]
 
-function handleLikeClick(tweetId){
-    console.log(tweetId)
+    if (targetTweetObj.isLiked){
+        targetTweetObj.likes--
+    }
+    else{
+        targetTweetObj.likes++ 
+    }
+    targetTweetObj.isLiked = !targetTweetObj.isLiked
+    render()
+}
+
+function handleRetweetClick(tweetId){
+    const targetTweetObj = tweetsData.filter(function(tweet){
+        return tweet.uuid === tweetId
+    })[0]
+    
+    if(targetTweetObj.isRetweeted){
+        targetTweetObj.retweets--
+    }
+    else{
+        targetTweetObj.retweets++
+    }
+    targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+    render() 
+}
+
+
+
+
+
 /*
 Challenge:
-2. handleLikeClick should take in a parameter. 
-   You can call this parameter 'tweetId'. For 
-   now just log out tweetId.
+1. Use the uuid stored in 'replyId' to take control 
+   of the div containing that tweet’s replies. 
+   (Check the HTML string below to remind yourself 
+   what id that div will have.)  
+2. Toggle the CSS class "hidden" on that div. 
 */
-}
 
 function getFeedHtml(){
     let feedHtml = ``
     
     tweetsData.forEach(function(tweet){
+        
+        let likeIconClass = ''
+        
+        if (tweet.isLiked){
+            likeIconClass = 'liked'
+        }
+        
+        let retweetIconClass = ''
+        
+        if (tweet.isRetweeted){
+            retweetIconClass = 'retweeted'
+        }
+        
+        let repliesHtml = ''
+        
+        if(tweet.replies.length > 0){
+            tweet.replies.forEach(function(reply){
+                repliesHtml+=`
+<div class="tweet-reply">
+    <div class="tweet-inner">
+        <img src="${reply.profilePic}" class="profile-pic">
+            <div>
+                <p class="handle">${reply.handle}</p>
+                <p class="tweet-text">${reply.tweetText}</p>
+            </div>
+        </div>
+</div>
+`
+            })
+        }
+        
+          
         feedHtml += `
 <div class="tweet">
     <div class="tweet-inner">
@@ -529,13 +1599,13 @@ function getFeedHtml(){
                     ${tweet.replies.length}
                 </span>
                 <span class="tweet-detail">
-                    <i class="fa-solid fa-heart"
+                    <i class="fa-solid fa-heart ${likeIconClass}"
                     data-like="${tweet.uuid}"
                     ></i>
                     ${tweet.likes}
                 </span>
                 <span class="tweet-detail">
-                    <i class="fa-solid fa-retweet"
+                    <i class="fa-solid fa-retweet ${retweetIconClass}"
                     data-retweet="${tweet.uuid}"
                     ></i>
                     ${tweet.retweets}
@@ -543,6 +1613,9 @@ function getFeedHtml(){
             </div>   
         </div>            
     </div>
+    <div class="hidden" id="replies-${tweet.uuid}">
+        ${repliesHtml}
+    </div>   
 </div>
 `
    })
@@ -554,4 +1627,3 @@ function render(){
 }
 
 render()
-
